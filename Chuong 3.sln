@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT00", "BT00\BT00.csproj", "{7C3C2FDE-8EA6-4306-AED8-07F39AFCE678}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT04_DATAGridView", "BT04_DATAGridView\BT04_DATAGridView.csproj", "{3D80EDE7-F54E-40E5-84E7-8C978B71B4F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT05_DataGridView_4_SQL", "BT05_DataGridView_4_SQL\BT05_DataGridView_4_SQL.csproj", "{DF6C7B26-7436-4EDB-8928-C80488363A70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7C3C2FDE-8EA6-4306-AED8-07F39AFCE678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3C2FDE-8EA6-4306-AED8-07F39AFCE678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3C2FDE-8EA6-4306-AED8-07F39AFCE678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D80EDE7-F54E-40E5-84E7-8C978B71B4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D80EDE7-F54E-40E5-84E7-8C978B71B4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D80EDE7-F54E-40E5-84E7-8C978B71B4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D80EDE7-F54E-40E5-84E7-8C978B71B4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6C7B26-7436-4EDB-8928-C80488363A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6C7B26-7436-4EDB-8928-C80488363A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6C7B26-7436-4EDB-8928-C80488363A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6C7B26-7436-4EDB-8928-C80488363A70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
