@@ -29,8 +29,8 @@ namespace BT04_DATAGridView
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
             this.ColMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,7 @@ namespace BT04_DATAGridView
             this.btnHuy = new System.Windows.Forms.Button();
             this.btGhi = new System.Windows.Forms.Button();
             this.btnKhong = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@ namespace BT04_DATAGridView
             this.dgvMonHoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvMonHoc.MultiSelect = false;
             this.dgvMonHoc.Name = "dgvMonHoc";
+            this.dgvMonHoc.RowHeadersWidth = 51;
             this.dgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMonHoc.Size = new System.Drawing.Size(530, 224);
             this.dgvMonHoc.TabIndex = 0;
@@ -69,31 +71,36 @@ namespace BT04_DATAGridView
             // 
             // ColMaMH
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColMaMH.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColMaMH.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColMaMH.HeaderText = "Mã môn";
+            this.ColMaMH.MinimumWidth = 6;
             this.ColMaMH.Name = "ColMaMH";
+            this.ColMaMH.Width = 125;
             // 
             // ColTenMH
             // 
             this.ColTenMH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColTenMH.FillWeight = 300F;
             this.ColTenMH.HeaderText = "Tên môn học";
+            this.ColTenMH.MinimumWidth = 6;
             this.ColTenMH.Name = "ColTenMH";
             // 
             // ColSoTiet
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColSoTiet.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColSoTiet.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColSoTiet.HeaderText = "Số tiết";
+            this.ColSoTiet.MinimumWidth = 6;
             this.ColSoTiet.Name = "ColSoTiet";
+            this.ColSoTiet.Width = 125;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 251);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 19);
+            this.label1.Size = new System.Drawing.Size(75, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã MH";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -102,7 +109,7 @@ namespace BT04_DATAGridView
             // 
             this.txtMaMH.Location = new System.Drawing.Point(87, 247);
             this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Size = new System.Drawing.Size(224, 26);
+            this.txtMaMH.Size = new System.Drawing.Size(224, 30);
             this.txtMaMH.TabIndex = 2;
             this.txtMaMH.TextChanged += new System.EventHandler(this.txtMaMH_TextChanged);
             // 
@@ -111,7 +118,7 @@ namespace BT04_DATAGridView
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 295);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 19);
+            this.label2.Size = new System.Drawing.Size(83, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên MH";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -120,7 +127,7 @@ namespace BT04_DATAGridView
             // 
             this.txtTenMH.Location = new System.Drawing.Point(87, 291);
             this.txtTenMH.Name = "txtTenMH";
-            this.txtTenMH.Size = new System.Drawing.Size(224, 26);
+            this.txtTenMH.Size = new System.Drawing.Size(224, 30);
             this.txtTenMH.TabIndex = 2;
             this.txtTenMH.TextChanged += new System.EventHandler(this.txtTenMH_TextChanged);
             // 
@@ -129,7 +136,7 @@ namespace BT04_DATAGridView
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 340);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 19);
+            this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 1;
             this.label3.Text = "Số tiết";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -138,7 +145,7 @@ namespace BT04_DATAGridView
             // 
             this.txtSoTiet.Location = new System.Drawing.Point(87, 336);
             this.txtSoTiet.Name = "txtSoTiet";
-            this.txtSoTiet.Size = new System.Drawing.Size(224, 26);
+            this.txtSoTiet.Size = new System.Drawing.Size(224, 30);
             this.txtSoTiet.TabIndex = 2;
             this.txtSoTiet.TextChanged += new System.EventHandler(this.txtSoTiet_TextChanged);
             // 
@@ -188,7 +195,7 @@ namespace BT04_DATAGridView
             // 
             // Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 380);
             this.Controls.Add(this.btnKhong);
@@ -232,6 +239,7 @@ namespace BT04_DATAGridView
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMaMH;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenMH;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSoTiet;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
